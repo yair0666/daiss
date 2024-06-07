@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dais</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/18f48085707377.5d839f5f5f341.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+        }
+        .overlay-image {
+            position: relative;
+            width: 400px; /* Cambio de tamaño */
+        }
+        .button {
+            position: absolute;
+            top: 70%; /* Ajuste de posición */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 5px 10px; /* Cambio de tamaño */
+            font-size: 14px; /* Cambio de tamaño */
+            cursor: pointer;
+            z-index: 1; /* Asegura que esté encima de la imagen */
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #ccc;
+            z-index: 10;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .modal p {
+            font-size: 18px;
+            text-align: left;
+            margin-bottom: 20px; /* Agrega margen inferior */
+        }
+        .modal button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+            float: right;
+        }
+        .corner-gif {
+            position: absolute;
+            top: -50px;
+            right: 10px;
+            width: 100px; /* Ajusta el tamaño del GIF */
+            height: auto; /* Para mantener la proporción */
+            z-index: 2; /* Asegura que esté encima de otros elementos */
+        }
+        .arrow-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://png.pngtree.com/png-clipart/20230315/original/pngtree-envelopes-png-image_8989376.png" alt="Envelopes" class="overlay-image">
+        <button class="button" onclick="showModal()">Click aquí</button>
+    </div>
+
+    <div class="modal" id="modal">
+        <img src="https://i.gifer.com/7V0.gif" alt="GIF de Hello Kitty" class="corner-gif">
+        <p>Le compartí a Mario Benedetti mis sentimientos por ti y él escribió el poema 'Te quiero'. Estas líneas me tocan el alma y me inspiran a florecer contigo:</p>
+        <p>'Te quiero para volvernos locos de risa, ebrios de nada y pasear sin prisa por las calles, eso sí, tomados de la mano, mejor dicho, del corazón.<br><br>
+        Te quiero como para sanarte, y sanarme, y sanemos juntos, para reemplazar las heridas por sonrisas y las lágrimas por miradas, en donde podremos decir más que en las palabras.'</p>
+        <button class="arrow-button" onclick="openLoveWindow()">➡️</button>
+    </div>
+
+    <script>
+        function showModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+        function hideModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        function openLoveWindow() {
+            var loveWindow = window.open("", "_blank");
+            loveWindow.document.write('<html><head><title>Te quiero mucho mi Dairita</title></head><body style="text-align:center;"><h1>Te quiero mucho mi Dairita</h1><img src="https://media.tenor.com/wbywJaLOfjYAAAAj/hello-kitty.gif" alt="GIF de Hello Kitty"><br><a href="https://culturainquieta.com/literatura/te-quiero-sin-mirar-atras-un-poema-de-mario-benedetti-para-recordar/" target="_blank">Click aquí pal poema completo ajajk</a><br><a href="https://open.spotify.com/track/6kdCN6gTWLcLxmLXoUcwuI?si=OC3Obb01RE2lSg_dH-EoWw" target="_blank">Click aquí pa otra cosilla</a></body></html>');
+        }
+    </script>
